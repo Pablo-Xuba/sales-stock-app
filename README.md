@@ -1,50 +1,170 @@
-# Welcome to your Expo app 👋
+# 📱 Sales & Stock Management App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A mobile app for small businesses in Zimbabwe to track sales, manage stock, and monitor profit in real-time.
 
-## Get started
+## 🎯 Purpose
 
-1. Install dependencies
+Answer these questions instantly:
+- *"Ndakaita marii nhasi?"* (How much did I make today?)
+- *"Profit yakadii?"* (What's my profit?)
+- *"Stock yasara yakadii?"* (How much stock is left?)
 
-   ```bash
-   npm install
-   ```
+## ✨ Features
 
-2. Start the app
+### Current Features (MVP)
+- ✅ **Authentication System** - Login & Sign Up with validation
+- ✅ **Today Dashboard** - View daily revenue, profit, and sales count
+- ✅ **Product Management** - Add products with cost/selling prices
+- ✅ **Stock Tracking** - Monitor inventory levels
+- ✅ **Sales Recording** - Quick sale entry (coming soon)
+- ✅ **Profit Calculator** - Auto-calculate profit margins
+- ✅ **Clean UI** - Professional, touch-friendly interface
 
-   ```bash
-   npx expo start
-   ```
+### Coming Soon
+- 🔄 Firebase Authentication & Firestore integration
+- 🔄 Record sales in 2 taps
+- 🔄 WhatsApp daily summary sharing
+- 🔄 Low stock alerts
+- 🔄 Sales history & analytics
 
-In the output, you'll find options to open the app in a
+## 🛠️ Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- **Framework**: React Native (Expo)
+- **Language**: TypeScript
+- **Navigation**: Expo Router
+- **UI**: React Native components with custom styling
+- **Backend** (Coming): Firebase (Authentication + Firestore)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## 🚀 Getting Started
 
-## Get a fresh project
+### Prerequisites
+- Node.js (v16+)
+- npm or yarn
+- Expo CLI
+- Expo Go app (for testing on phone)
 
-When you're ready, run:
+### Installation
 
+1. Clone the repository
 ```bash
-npm run reset-project
+git clone https://github.com/YOUR_USERNAME/sales-stock-app.git
+cd sales-stock-app
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+2. Install dependencies
+```bash
+npm install
+```
 
-## Learn more
+3. Start the development server
+```bash
+npm start
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+4. Run on your device
+- Scan the QR code with Expo Go (Android/iOS)
+- Press `a` for Android emulator
+- Press `i` for iOS simulator
+- Press `w` for web browser
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📱 Screens
 
-## Join the community
+### Authentication
+- **Welcome Screen** - Landing page with app features
+- **Login Screen** - Email/password authentication
+- **Sign Up Screen** - Create new business account
 
-Join our community of developers creating universal apps.
+### Main App (Tabs)
+- **Today** - Daily revenue, profit, and sales summary
+- **Sales** - Record new sales quickly
+- **Stock** - View and manage product inventory
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### Additional Screens
+- **Add Product** - Add new products with pricing
+
+## 📂 Project Structure
+
+```
+sales-stock-app/
+├── app/
+│   ├── (tabs)/          # Tab navigation screens
+│   │   ├── index.tsx    # Today/Dashboard
+│   │   ├── sales.tsx    # Sales recording
+│   │   └── stock.tsx    # Stock management
+│   ├── index.tsx        # Welcome screen
+│   ├── login.tsx        # Login screen
+│   ├── signup.tsx       # Sign up screen
+│   ├── add-product.tsx  # Add product modal
+│   └── _layout.tsx      # Root layout
+├── components/          # Reusable components
+├── constants/           # App constants & theme
+└── assets/             # Images & resources
+```
+
+## 🎨 Design Principles
+
+- **Simple**: 2-tap maximum for common actions
+- **Fast**: Optimized for slow networks
+- **Offline-first**: Works without internet
+- **Touch-friendly**: Large buttons, clear labels
+- **Local context**: Built for Zimbabwe businesses
+
+## 🔐 Environment Setup
+
+Create a `.env` file (when Firebase is integrated):
+```
+FIREBASE_API_KEY=your_api_key
+FIREBASE_AUTH_DOMAIN=your_auth_domain
+FIREBASE_PROJECT_ID=your_project_id
+```
+
+## 🧪 Testing
+
+Currently using mock authentication. Firebase integration coming next.
+
+## 📝 Development Roadmap
+
+### Phase 1 (Days 1-3) ✅ COMPLETE
+- [x] Project setup
+- [x] Navigation structure
+- [x] Basic UI screens
+- [x] Add Product functionality
+
+### Phase 2 (Days 4-6) 🚧 IN PROGRESS
+- [ ] Firebase Authentication
+- [ ] Firestore integration
+- [ ] Save products to database
+- [ ] Load products from database
+
+### Phase 3 (Days 7-9)
+- [ ] Sales recording logic
+- [ ] Stock deduction on sale
+- [ ] Daily summary calculation
+
+### Phase 4 (Days 10-12)
+- [ ] WhatsApp sharing
+- [ ] Offline sync
+- [ ] User settings
+
+### Phase 5 (Days 13-14)
+- [ ] UI polish
+- [ ] Bug fixes
+- [ ] Real shop testing
+
+## 🤝 Contributing
+
+This is a learning project, but suggestions and improvements are welcome!
+
+## 📄 License
+
+MIT License - Feel free to use for your own business!
+
+## 🇿🇼 Made for Zimbabwe
+
+Built with love for small businesses in Zimbabwe. From tuckshops to salons to phone repair shops - this is for you!
+
+---
+
+**Version**: 0.1.0 (MVP)  
+**Status**: Active Development  
+**Target**: Android (Primary), iOS (Secondary)
