@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   header: {
-    marginTop: 40,
+    marginTop: 10,
     marginBottom: 20,
   },
   title: {

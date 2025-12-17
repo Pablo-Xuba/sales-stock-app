@@ -2,39 +2,43 @@ import { Tabs } from 'expo-router';
 import React from 'react';
 
 import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/theme';
-import { useColorScheme } from '@/hooks/use-color-scheme';
+import { TopNavigation } from '@/components/top-navigation';
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
+        tabBarActiveTintColor: '#4CAF50',
+        tabBarInactiveTintColor: '#999',
+        headerShown: true,
         tabBarButton: HapticTab,
+        tabBarStyle: {
+          display: 'none',
+        },
+        header: () => <TopNavigation />,
       }}>
+      <Tabs.Screen
+        name="home"
+        options={{
+          title: 'Home',
+        }}
+      />
       <Tabs.Screen
         name="index"
         options={{
           title: 'Today',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="calendar" color={color} />,
         }}
       />
       <Tabs.Screen
         name="sales"
         options={{
           title: 'Sales',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="cart.fill" color={color} />,
         }}
       />
       <Tabs.Screen
         name="stock"
         options={{
           title: 'Stock',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="archivebox.fill" color={color} />,
         }}
       />
     </Tabs>

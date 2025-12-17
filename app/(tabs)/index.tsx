@@ -21,7 +21,7 @@ export default function TodayScreen() {
   });
 
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container} contentContainerStyle={styles.scrollContent}>
       <ThemedView style={styles.header}>
         <ThemedText type="title" style={styles.businessName}>My Business</ThemedText>
         <ThemedText style={styles.date}>{today}</ThemedText>
@@ -77,10 +77,13 @@ export default function TodayScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#f5f5f5',
+  },
+  scrollContent: {
     padding: 20,
   },
   header: {
-    marginTop: 40,
+    marginTop: 10,
     marginBottom: 20,
   },
   businessName: {
