@@ -1,8 +1,9 @@
-import { StyleSheet, ScrollView, TouchableOpacity, View } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { ScrollView, StyleSheet, TouchableOpacity, View } from 'react-native';
 
 export default function TodayScreen() {
   const router = useRouter();
@@ -51,20 +52,23 @@ export default function TodayScreen() {
           style={[styles.button, styles.primaryButton]}
           onPress={() => router.push('/sales')}
         >
-          <ThemedText style={styles.buttonText}>➕ Record Sale</ThemedText>
+          <ThemedText style={styles.buttonText}> Record Sale</ThemedText>
         </TouchableOpacity>
 
         <TouchableOpacity 
           style={[styles.button, styles.secondaryButton]}
           onPress={() => alert('WhatsApp share coming soon!')}
         >
-          <ThemedText style={styles.buttonText}>📤 Send Summary</ThemedText>
+          <View style={styles.buttonContent}>
+            <MaterialCommunityIcons name="whatsapp" size={20} color="#4CAF50" style={styles.icon} />
+            <ThemedText style={styles.buttonText}>Send Summary</ThemedText>
+          </View>
         </TouchableOpacity>
       </ThemedView>
 
       {/* Recent Sales */}
       <ThemedView style={styles.recentSection}>
-        <ThemedText type="subtitle">Recent Sales</ThemedText>
+        <ThemedText type="subtitle" style={styles.recentText}>Recent Sales</ThemedText>
         <ThemedView style={styles.emptyState}>
           <ThemedText style={styles.emptyText}>No sales yet today</ThemedText>
           <ThemedText style={styles.emptySubtext}>Tap "Record Sale" to get started</ThemedText>
@@ -85,19 +89,24 @@ const styles = StyleSheet.create({
   header: {
     marginTop: 10,
     marginBottom: 20,
+    backgroundColor: '#f5f5f5',
+  
   },
   businessName: {
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 5,
+    color: '#4CAF50',
   },
   date: {
     fontSize: 14,
     opacity: 0.7,
+    color: '#4CAF50',
   },
   statsContainer: {
     gap: 15,
     marginBottom: 20,
+    backgroundColor: 'white',
   },
   statCard: {
     padding: 20,
@@ -112,10 +121,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#4CAF50',
   },
   profitCard: {
-    backgroundColor: '#2196F3',
+    backgroundColor: '#4CAF50',
   },
   salesCard: {
-    backgroundColor: '#FF9800',
+    backgroundColor: '#4CAF50',
   },
   statLabel: {
     fontSize: 14,
@@ -131,6 +140,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     gap: 10,
     marginBottom: 30,
+    backgroundColor: 'white',
   },
   button: {
     padding: 18,
@@ -138,31 +148,60 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   primaryButton: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: 'white',
+    borderColor: '#4CAF50',
+    borderWidth: 2,
   },
   secondaryButton: {
-    backgroundColor: '#25D366',
+    backgroundColor: 'white',
+    borderColor: '#4CAF50',
+    borderWidth: 2,
+  },
+  buttonContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  icon: {
+    marginRight: 8,
   },
   buttonText: {
-    color: 'white',
+    color: '#4CAF50',
     fontSize: 18,
     fontWeight: 'bold',
   },
   recentSection: {
     marginBottom: 20,
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+    borderColor: '#4CAF50',
+    borderWidth: 1,
+    borderRadius: 12,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
   },
   emptyState: {
     padding: 40,
     alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+ 
+  },
+  recentText: {
+    color: '#4CAF50',
     marginTop: 20,
   },
   emptyText: {
     fontSize: 16,
-    opacity: 0.6,
+    opacity: 0.8,
+    color: '#4CAF50',
   },
   emptySubtext: {
     fontSize: 14,
-    opacity: 0.4,
+    opacity: 0.6,
     marginTop: 5,
+    color: '#4CAF50',
   },
 });

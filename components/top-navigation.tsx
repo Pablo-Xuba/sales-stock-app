@@ -1,6 +1,6 @@
-import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
-import { useRouter, usePathname } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { usePathname, useRouter } from 'expo-router';
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export function TopNavigation() {
   const router = useRouter();
